@@ -10,7 +10,7 @@ include_recipe 'build-essential'
 source_version = node['fish-shell']['source']['version']
 
 dependencies = value_for_platform(
-  ["redhat", "centos", "fedora", "scientific"] => {'default' => ['ncurses-devel']}
+  %w(redhat centos fedora scientific) => { 'default' => ['ncurses-devel'] }
 )
 
 dependencies.each do |dependency|
@@ -19,11 +19,11 @@ dependencies.each do |dependency|
   end
 end
 
-ark "fish-shell" do
-  url      "http://fishshell.com/files/#{source_version}/fish-#{source_version}.tar.gz"
-  version  source_version
+ark 'fish-shell' do
+  url "http://fishshell.com/files/#{source_version}/fish-#{source_version}.tar.gz"
+  version source_version
   checksum node['fish-shell']['source']['checksum']
-  action   [:install_with_make]
+  action [:install_with_make]
 end
 
-# TODO add to etc/shells if it is not already on OS X and rhel
+# TODO: add to etc/shells if it is not already on OS X and rhel
