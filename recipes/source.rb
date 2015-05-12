@@ -10,7 +10,8 @@ include_recipe 'build-essential'
 source_version = node['fish-shell']['source']['version']
 
 dependencies = value_for_platform(
-  %w(redhat centos fedora scientific) => { 'default' => ['ncurses-devel'] }
+  %w(redhat centos fedora scientific) => { 'default' => ['ncurses-devel'] },
+  'default' => []
 )
 
 dependencies.each do |dependency|
