@@ -1,8 +1,15 @@
 name             'fish-shell'
-maintainer       'The Authors'
-maintainer_email 'you@example.com'
-license          'all_rights'
+maintainer       'David Aronsohn'
+maintainer_email 'WagThatTail@Me.com'
+license          'BSD'
 description      'Installs/Configures fish-shell'
-long_description 'Installs/Configures fish-shell'
-version          '0.1.0'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          '0.9.0'
 
+%w( mac_os_x centos freebsd amazon arch openbsd ).each do |os|
+  supports os
+end
+
+depends 'build-essential'
+depends 'yum'
+depends 'ark'
