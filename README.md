@@ -1,11 +1,42 @@
-# fish-shell
+Description
+===========
+
+Installs or compiles/installs fish-shell; a command line shell for the 90s
+
+Requirements
+============
+
+## Platform:
+
+* FreeBSD
+* Red Hat/CentOS/Fedora/Scientific
+* ArchLinux
+
+Attributes
+==========
+
+## Default recipe attributes:
+
+* `node['fish-shell']['extra_packages']` - An array of extra packages related to vim to install (like plugins). Empty array by default.
+
+* `node['fish-shell']['install_method']` - Sets the install method, choose from the various install recipes. This attribute is set to 'package' by default.
 
 
-The best shell you can own, managed by Chef.
+## Source recipe attributes:
 
-**Still needs freebsd tests working**
+* `node['fish-shell']['source']['version']` -  The version of fish-shell to compile, 2.1.2 by default.
+* `node['fish-shell']['source']['checksum']` -  The source file checksum.
 
-Mostly very self explanitory. Doc coming soon
+
+Usage
+=====
+
+Put `recipe[fish-shell]` in a run list, or `include_recipe 'fish-shell'` to ensure that fish is installed on your systems.
+
+License and Author
+==================
+
+Author:: David tBunnyMan Aronsohn <tbunnyman@me.com>
 
 ```text
 Copyright (c) 2015 ChefFurs

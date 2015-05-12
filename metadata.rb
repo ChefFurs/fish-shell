@@ -4,7 +4,7 @@ maintainer_email 'WagThatTail@Me.com'
 license          'BSD'
 description      'Installs/Configures fish-shell'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.9.0'
+version          '1.0.0'
 
 %w( mac_os_x centos freebsd amazon arch openbsd ).each do |os|
   supports os
